@@ -94,14 +94,8 @@ botonesAgregar.forEach((boton) => {
       carrito[indexCarrito].cantidad += 1;
     }
     console.log(carrito);
-    //Guardar json
-    const objCarritoJson = JSON.stringify(carrito);
-    localStorage.setItem("objCarrito", objCarritoJson);
   };
 });
-
-
-
 
 //boton finalizar compra
 
@@ -111,4 +105,8 @@ botonFinalizar.onclick = () => {
     .map((prod) => prod.precio * prod.cantidad)
     .reduce((a1, b1) => a1 + b1);
   alert(`El total de su compra es ${totalCompra}`);
+
+  //Guardar json
+  const objCarritoJson = JSON.stringify(carrito);
+  localStorage.setItem("objCarrito", objCarritoJson);
 };
